@@ -49,7 +49,7 @@ rmpath([currPath '/VB-GMM/']);
 if strcmp(op.cov_Type,'Full')
 %   poterior predictive of VB-GMM with conjugate NIW prior is multivariate-T mixture
     postPred.mu = vbClustRes.post{1}.m;
-    postPred.nu = vbClustRes.post{1}.v-+1;    
+    postPred.nu = vbClustRes.post{1}.v-dimOrig+1;    
     temp1 = repmat(((vbClustRes.post{1}.beta+1)./(vbClustRes.post{1}.beta .* postPred.nu))',1,dimOrig,dimOrig);
     temp1 = permute(temp1,[3 2 1]);
     temp2 = zeros(size(vbClustRes.post{1}.W));
@@ -57,7 +57,7 @@ if strcmp(op.cov_Type,'Full')
         temp2(:,:,i) = inv(vbClustRes.post{1}.W(:,:,i));
     end
     postPred.sigma = temp1 .* temp2;
-    postPred.weight = vbClustRes.Nk{1}./sum(vbClustRes.Nk{1});
+    postPred.weight = (vbClustRes.Nk{1}+prior.alpha)./sum(vbClustRes.Nk{1}+prior.alpha);
     
     [xPred,pos_wei1] = multTmm_prediction(x,postPred); % function very similr to gmm_prediction.m except with mult-T distinution
 end
