@@ -6,7 +6,7 @@ This document describes the use of Bayesian Gaussian mixture models (BGMM) for m
 
 This also forms the source code related to our work 
 
-1.	Ana Ramirez Lopez, Shreyas Seshadri, Lauri Juvela, Okko Rasanen and Paavo Alku: "Speaking style conversion from normal to Lombard speech using a glottal vocoder and Bayesian GMMs", accepted for publication in Proc. Interspeech 2017, Stockholm, Sweden.
+1.	Ana Ramirez Lopez, Shreyas Seshadri, Lauri Juvela, Okko Räsänen and Paavo Alku: "Speaking style conversion from normal to Lombard speech using a glottal vocoder and Bayesian GMMs", accepted for publication in Proc. Interspeech 2017, Stockholm, Sweden.
 
 Comments/questions are welcome! Please contact: shreyas.seshadri@aalto.fi
 
