@@ -45,7 +45,7 @@ for itr = 1:op.repeats
             [extra_E,r] = reorderFE(extra_E,r,op);
         end
         [post,extra_M] = postUpdate(x,r,prior,op); % M step
-        extra = catstruct(extra_E,extra_M);
+        extra = catstruct(extra_E,extra_M,[]);
         %[~,fE(1,itr2),fE(2,itr2),fE(3,itr2),fE(4,itr2),fE(5,itr2),fE(6,itr2)] = freeEnergyCalc(prior,post,r,op,extra);
         if strcmp(op.stopCrit,'freeEnergy') 
             newFreeEnergy = freeEnergyCalc(prior,post,r,op,extra);
